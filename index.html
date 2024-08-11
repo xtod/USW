@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>短连接</title>
+    <title>短连接服务</title>
     <style>
         body,
         html {
-            margin: auto 18px;
+            margin: auto 8px;
             padding: 0;
             height: 100%;
             background-image: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%)
         }
-
         input[type=text] {
             border: none;
             text-align: center;
             outline: none;
         }
-
         body {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .card {
             width: 800px;
             background-color: #ebedee;
@@ -34,7 +30,6 @@
             overflow: hidden;
             border: 1px solid #9b9ea0;
         }
-
         h2 {
             text-align: center;
             background-color: #dbdfe0a8;
@@ -43,19 +38,16 @@
             border-bottom: 1px solid #9b9ea0;
             font-size: 20px;
         }
-
         .form-group {
             padding: 5px 20px 20px 20px;
             box-sizing: border-box;
             width: 100%;
         }
-
         .form-group>label {
             width: 100px;
             line-height: 40px;
             font-size: 18px;
         }
-
         .form-group>input {
             width: 100%;
             line-height: 28px;
@@ -64,7 +56,6 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-
         .form-group>#submit {
             width: 75%;
             line-height: 40px;
@@ -78,8 +69,6 @@
             margin-top: 20px;
             display: block;
         }
-
-
         /* 遮罩层 */
         .dialog {
             width: 100%;
@@ -96,7 +85,6 @@
             transition: opacity .4s ease-out, all .2s;
             transform: translateZ(0);
         }
-
         /* 弹窗 */
         .dialog-content {
             width: 450px;
@@ -108,7 +96,6 @@
             border: 1px solid #9b9ea0;
             transition: margin-top .4s ease-out;
         }
-
         .dialog-content>.dialog-header {
             width: 100%;
             padding: 0 20px;
@@ -119,13 +106,11 @@
             display: flex;
             justify-content: space-between;
         }
-
         .dialog-content>.dialog-header>.dialog-close {
             cursor: pointer;
             /* 不可选中 */
             user-select: none;
         }
-
         .dialog-content>.dialog-body {
             width: 100%;
             padding: 0 20px;
@@ -133,14 +118,12 @@
             border-bottom: 1px solid #9b9ea0;
             font-size: 19px;
         }
-
         .dialog-content>.dialog-footer {
             width: 100%;
             display: flex;
             justify-content: center;
             padding-bottom: 20px;
         }
-
         .dialog-content>.dialog-footer>button {
             width: 90px;
             line-height: 35px;
@@ -154,13 +137,11 @@
             margin-top: 20px;
             display: block;
         }
-
         /* 显示弹窗 */
         .dialog-show {
             opacity: 1;
             z-index: 100;
         }
-
         .dialog-show>.dialog-content {
             margin-top: 20px;
         }
@@ -188,7 +169,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="dialog">
         <div class="dialog-content">
@@ -197,13 +177,8 @@
                 <span class="dialog-close">&times;</span>
             </div>
             <div class="dialog-body">
-                <!-- <p>短链接：<span id="shortUrl"></span></p> -->
             </div>
             <div class="dialog-footer">
-                <!-- 复制按钮 -->
-                <!-- <button class="copy" id="copy">复制</button> -->
-                <!-- 确定按钮 -->
-                <!-- <button class="conform" id="conform">确定</button> -->
             </div>
         </div>
     </div>
@@ -220,7 +195,6 @@
     <footer>
         <p><a href="https://jidan.org">JiDan</a>&dot;<a href="https://unixetc.com">unix</a></p>
     </footer>
-
     <script>
         var dialog = document.querySelector('.dialog');
         var url = document.getElementById('url');
@@ -248,13 +222,11 @@
             }).then(function (data) {
                 // alert('提交成功，短链接为：' + data.data.shortUrl);
                 // 在弹窗上显示短链接
-
                 dialog.querySelector('.dialog-body').innerHTML =
                     `<p>短链接：<span id="shortUrl">${location.host}/${data.data.shortUrl}</span></p>`;
                 // 在弹窗上显示复制按钮
                 dialog.querySelector('.dialog-footer').innerHTML =
                     `<button class="copy" id="copy">复制</button>`;
-
                 // 复制按钮
                 var copy = document.getElementById('copy');
                 copy.onclick = function () {
@@ -308,5 +280,4 @@
         }
     </script>
 </body>
-
 </html>

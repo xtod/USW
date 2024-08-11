@@ -1,10 +1,10 @@
 const html404 = `<!DOCTYPE html>
 <body>
-  <h1>404 Not Found.</h1>
-  <p>The url you visit is not found.</p>
+  <h1>404未找到</h1>
+  <p>连接未找到</p>
 </body>`
 
-const statichtml = "https://wlnxing.github.io/URL-Shorten-Worker/index.html"
+const statichtml = "https://xtod.github.io/USW/index.html"
 
 
 async function randomString (len) {
