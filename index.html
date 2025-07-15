@@ -229,7 +229,7 @@
                 // alert('提交成功，短链接为：' + data.data.shortUrl);
                 // 在弹窗上显示短链接
                 dialog.querySelector('.dialog-body').innerHTML =
-                    `<p>短链接：<span id="shortUrl">${location.host}/${data.data.shortUrl}</span></p>`;
+                    `<p>短链接：<span id="shortUrl">https://${location.host}/${data.data.shortUrl}</span></p>`;
                 // 在弹窗上显示复制按钮
                 dialog.querySelector('.dialog-footer').innerHTML =
                     `<button class="copy" id="copy">复制</button>`;
